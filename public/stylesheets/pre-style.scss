@@ -1,0 +1,52 @@
+$primary-color: #D2F1F7;
+$secondary-color: #909596;
+$third-color: #ff0000;
+
+
+.fa-k:before {
+  font-family: Arial;
+  font-weight: bold;
+  content: 'K';
+}
+
+#navbar-large {
+  font-size: 140%;
+  float: none;
+
+  * {
+    color: white;
+  }
+
+  > .navbar-brand {
+    font-size: 180%;
+  }
+}
+
+#navbar-small {
+  * {
+    color: white;
+  }
+}
+
+.nav-item:hover {
+  border-bottom: solid 2px white;
+}
+
+#links {
+  float: right;
+  * {
+    color: #5e6268;
+  }
+  > a {
+    padding-left: 1px;
+    padding-right: 1px;
+  }
+  i:hover {
+    color: #dc3545!important;
+  }
+}
+
+#footer {
+  height: 30px;
+  background-color: white;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "kvnlws",
+  "version": "1.0.0",
+  "description": "personal portfolio",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinrlewis/kvnlws.git"
+  },
+  "author": "Kevin Lewis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinrlewis/kvnlws/issues"
+  },
+  "homepage": "https://github.com/kevinrlewis/kvnlws#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.1",
+    "express": "^4.16.2",
+    "helmet": "^3.9.0",
+    "path": "^0.12.7",
+    "pug": "^2.0.0-rc.4",
+    "serve-favicon": "^2.4.5"
+  }
+}

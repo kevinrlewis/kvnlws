@@ -1,0 +1,34 @@
+.fa-k:before {
+  font-family: Arial;
+  font-weight: bold;
+  content: 'K'; }
+
+#navbar-large {
+  font-size: 140%;
+  float: none; }
+  #navbar-large * {
+    color: white; }
+  #navbar-large > .navbar-brand {
+    font-size: 180%; }
+
+#navbar-small * {
+  color: white; }
+
+.nav-item:hover {
+  border-bottom: solid 2px white; }
+
+#links {
+  float: right; }
+  #links * {
+    color: #5e6268; }
+  #links > a {
+    padding-left: 1px;
+    padding-right: 1px; }
+  #links i:hover {
+    color: #dc3545 !important; }
+
+#footer {
+  height: 30px;
+  background-color: white; }
+
+/*# sourceMappingURL=style.css.map */
