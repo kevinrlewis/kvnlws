@@ -17,18 +17,16 @@
 .nav-item:hover {
   border-bottom: solid 2px white; }
 
-#links {
-  float: right; }
-  #links * {
-    color: #5e6268; }
-  #links > a {
-    padding-left: 1px;
-    padding-right: 1px; }
-  #links i:hover {
-    color: #dc3545 !important; }
+#links * {
+  color: #5e6268; }
+#links > a {
+  padding-left: 1px;
+  padding-right: 1px; }
+#links i:hover {
+  color: #dc3545 !important; }
 
 #footer {
   height: 30px;
-  background-color: white; }
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map */

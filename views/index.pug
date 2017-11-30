@@ -1,24 +1,26 @@
 extends layout
 
 block content
-  div.container-fluid.fixed-bottom(style="padding-bottom: 4%;")
+  div.container-fluid(style="padding-bottom: 2%; padding-top: 2%;")
     form.border.border-danger#blogpostform
       div.form-group(style="padding: 2%; margin: 0px;")
-        label(for="subjectInput") Subject
-        button.btn.btn-primary#postsubmit(
-              type="submit"
-              style="padding: 2px; border-radius: 0; float: right; margin-bottom: inherit;") Submit
-        input(type="subject"
-              class="form-control" 
-              id="subjectInput"
-              aria-describedby="subjectHelp" 
-              placeholder="Enter subject")
-        br
-        textarea(type="password"
-              class="form-control" 
-              id="postInput"
-              rows="3"
-              style="resize: none;")
+        div.container-fluid
+          div.row
+            input.col-8(type="subject"
+                  class="form-control" 
+                  id="subjectInput"
+                  aria-describedby="subjectHelp" 
+                  placeholder="Enter subject")
+            button.offset-2.col-2.btn.btn-primary#postsubmit(
+                  type="submit"
+                  style="padding: 2px; border-radius: 0; float: right; margin-bottom: inherit;") Submit
+          br
+          div.row
+            textarea.col-12(class="form-control" 
+                  id="postInput"
+                  rows="3"
+                  style="resize: none;")
+            
         
     
     

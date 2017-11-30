@@ -18,4 +18,9 @@ module.exports = function(app) {
   app.get('/cryptography', function(req, res){
     res.render("cryptography.pug", { title: 'Cryptography' });
   });
+
+  // ADMIN
+  app.get('/admin', function(req, res){
+    res.render("admin.pug", { title: 'Admin' });
+  });
 }

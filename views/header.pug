@@ -21,35 +21,4 @@ html(lang='en')
           crossorigin="anonymous")
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    nav.navbar.navbar-light.navbar-expand.bg-danger.d-none.d-md-flex#navbar-large
-      a.navbar-brand(href='/') Kevin Lewis
-      div.navbar-nav-scroll
-        ul.navbar-nav.bd-navbar-nav.flex-row
-          li.nav-item
-            a.nav-link(href='/experience') Experience
-          li.nav-item
-            a.nav-link(href='/education') Education
-          li.nav-item
-            a.nav-link(href='/cryptography') Cryptography
-    nav.navbar.navbar-light.navbar-expand.bg-danger.d-sm-flex.d-md-none#navbar-small
-      a.navbar-brand.mx-auto(href='/') KL
-      div.navbar-nav-scroll.mx-auto
-        ul.navbar-nav.bd-navbar-nav.flex-row
-          li.nav-item
-            a.nav-link(href='/experience') Experience
-          li.nav-item
-            a.nav-link(href='/education') Education
-          li.nav-item
-            a.nav-link(href='/cryptography') Cryptography
-    block content
-    hr
-    div#footer
-      div.mx-auto#links
-        a(href="https://www.facebook.com/profile.php?id=100000750072706")
-          i.fa.fa-facebook-official.fa-2x
-        a(href="https://www.linkedin.com/in/kevin-lewis-6887348b/")
-          i.fa.fa-linkedin-square.fa-2x
-        a(href="https://github.com/kevinrlewis")
-          i.fa.fa-github.fa-2x
-      
+block content
