@@ -5,6 +5,7 @@ var bodyParser    = require('body-parser');
 var helmet        = require('helmet');
 var compression   = require('compression');
 var favicon       = require('serve-favicon');
+var mongoose      = require('mongoose');
 var app           = express();
 
 // set up body parser
@@ -23,6 +24,16 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 // set helmet
 app.use(helmet());
+
+// connect mongodb database
+// TODO: Try to handle
+try {
+  mongoose.connect("mongodb://post:pass4post@ds127439.mlab.com:27439/hash", { useMongoClient: true });
+} catch (e) {
+  console.log("was unable to connect to database");
+  console.log(e.message);
+  // handle or display that the database can't connect
+}
 
 // require the routes file
 require('./routes.js')(app);

@@ -1,7 +1,45 @@
+var hash      = require('./models/hash.js')
+var blogpost  = require('./models/blogpost.js')
+
 module.exports = function(app) {
   // INDEX
   app.get('/', function(req, res){
-    res.render("index.pug", { title: 'Kevin Lewis' });
+    blogpost.find({}, function(err, allposts) {
+      //console.log(allposts);
+      res.render("index.pug", { title: 'Kevin Lewis', blogposts: allposts });
+    });
+  });
+
+  // INDEX POST
+  app.post('/',
+  function(req, res, next){
+    console.log('attempting to post to blog...');
+    hash.findOne({ 'hash' : req.body.hash }, function (err, hash) {
+      console.log('success');
+      if (err) {
+        console.log(err);
+      }
+
+      var newpost = new blogpost({
+        subject: req.body.subject,
+        content: req.body.content,
+        date: req.body.date
+      });
+      // TODO: finish blog post
+      // add post to db
+      //blogpost.save()
+      newpost.save(function(err) {
+        if (err) {
+          console.log(err);
+          throw err;
+        }
+        console.log('new post saved!');
+      });
+      res.end();
+    });
+
+    // send response that the hash was incorrect
+    res.status(500).send('No match.');
   });
 
   // EXPERIENCE
@@ -17,10 +55,5 @@ module.exports = function(app) {
   // CRYPTOGRAPHY
   app.get('/cryptography', function(req, res){
     res.render("cryptography.pug", { title: 'Cryptography' });
-  });
-
-  // ADMIN
-  app.get('/admin', function(req, res){
-    res.render("admin.pug", { title: 'Admin' });
   });
 }

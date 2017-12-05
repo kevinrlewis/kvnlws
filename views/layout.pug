@@ -3,8 +3,8 @@ html(lang='en')
   head
     title= title
     meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')      
-    script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-          integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    script(src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
           crossorigin="anonymous")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
           integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
@@ -45,11 +45,14 @@ html(lang='en')
     block content
     hr
     div#footer
-      div.mx-auto#links
-        a(href="https://www.facebook.com/profile.php?id=100000750072706")
-          i.fa.fa-facebook-official.fa-2x
-        a(href="https://www.linkedin.com/in/kevin-lewis-6887348b/")
-          i.fa.fa-linkedin-square.fa-2x
-        a(href="https://github.com/kevinrlewis")
-          i.fa.fa-github.fa-2x
+      div.container-fluid
+        div.row.justify-content-center#links
+          a(href="https://www.facebook.com/profile.php?id=100000750072706")
+            i.fa.fa-facebook-official.fa-2x
+          a(href="https://www.linkedin.com/in/kevin-lewis-6887348b/")
+            i.fa.fa-linkedin-square.fa-2x
+          a(href="https://github.com/kevinrlewis")
+            i.fa.fa-github.fa-2x
+        div.row.justify-content-center
+          small E-mail: kevin.lewis_22@hotmail.com
       

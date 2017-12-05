@@ -2,6 +2,9 @@ $primary-color: #D2F1F7;
 $secondary-color: #909596;
 $third-color: #ff0000;
 
+.btn {
+  border-radius: 0;
+}
 
 .fa-k:before {
   font-family: Arial;
@@ -48,4 +51,36 @@ $third-color: #ff0000;
 #footer {
   height: 30px;
   text-align: center;
+}
+
+#ciphergroup {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  // .nav-item {
+  //   border-color: #dc3545;
+  // }
+  .active {
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  #ciphergroup {
+    font-size: 80%;
+    font-weight: 900;
+  }
+}
+
+#alphabets {
+  text-align: center;
+}
+
+h4 {
+  font-family: monospace;
+}
+
+#post {
+  padding: 1%;
+  margin-top: 1rem;
+  border-radius: 0;
 }

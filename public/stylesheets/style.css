@@ -1,3 +1,6 @@
+.btn {
+  border-radius: 0; }
+
 .fa-k:before {
   font-family: Arial;
   font-weight: bold;
@@ -28,5 +31,26 @@
 #footer {
   height: 30px;
   text-align: center; }
+
+#ciphergroup {
+  padding-top: 2%;
+  padding-bottom: 2%; }
+  #ciphergroup .active {
+    border-radius: 0; }
+
+@media (max-width: 768px) {
+  #ciphergroup {
+    font-size: 80%;
+    font-weight: 900; } }
+#alphabets {
+  text-align: center; }
+
+h4 {
+  font-family: monospace; }
+
+#post {
+  padding: 1%;
+  margin-top: 1rem;
+  border-radius: 0; }
 
 /*# sourceMappingURL=style.css.map */

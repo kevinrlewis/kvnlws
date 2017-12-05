@@ -1,3 +1,106 @@
 extends layout
 
+
 block content
+  script(src='/scripts/crypto.js')
+  div.container-fluid
+    ul.nav.nav-pills#ciphergroup
+      li.nav-item
+        a.nav-link#caesartab(href='#caesar'
+                data-toggle='tab'
+                role="tab"
+                aria-controls="caesar"
+                aria-selected="true"
+                onclick='caesarClick()') Caesar
+      li.nav-item
+        a.nav-link#atbashtab(href='#atbash'
+                data-toggle='tab'
+                role="tab"
+                aria-controls="atbash"
+                aria-selected="true"
+                onclick='atbashClick()') Atbash
+      li.nav-item
+        a.nav-link#genmonotab(href='#genmono'
+                data-toggle='tab'
+                role="tab"
+                aria-controls="genmono"
+                aria-selected="true"
+                onclick='genmonoClick()') Monoalphabetic
+    div.tab-content
+      div.tab-pane.fade.mx-auto#caesar(role='tabpanel'
+                aria-labelledby="caesartab")
+        div#caesarbody
+          div#alphabets
+            small Plaintext alphabet
+              h4#plaintext-caesar
+            small Ciphertext alphabet
+              h4#ciphertext-caesar
+        form
+          div.container-fluid
+            div.row.justify-content-center.form-group
+              a.col-1.btn.btn-dark(onclick='left()')
+                i.fa.fa-arrow-left.fa-inverse(aria-hidden='true')
+              h4.col-1#shift-amount(style='text-align: center; margin-bottom: 0; padding-top: 0.15em;') 0
+              a.col-1.btn.btn-dark(onclick='right()')
+                i.fa.fa-arrow-right.fa-inverse(aria-hidden='true')
+              div.offset-1.col-7
+                input.form-control#plaintextInput-caesar(
+                  type='plaintext'
+                  placeholder='Text to Encrypt'
+                  )
+            div.row.justify-content-center
+              input.btn.btn-success.col-12.col-md-4(
+                type='button'
+                value='submit'
+                onclick='encryptcaesar()'
+                )
+            div.row.text-center(style='padding-top: 2%;')
+              h4.col-12#encrypted-caesar
+      div.tab-pane.fade.mx-auto#atbash(role='tabpanel'
+                aria-labelledby="atbashtab")
+        div#atbashbody
+          div#alphabets
+            small Plaintext alphabet
+              h4#plaintext-atbash
+            small Ciphertext alphabet
+              h4#ciphertext-atbash
+        form
+          div.container-fluid
+            div.row.justify-content-center.form-group
+              div.col-12
+                input.form-control#plaintextInput-atbash(
+                  type='plaintext'
+                  placeholder='Text to Encrypt'
+                  )
+            div.row.justify-content-center
+              input.btn.btn-success.col-12.col-md-4(
+                type='button'
+                value='submit'
+                onclick='encryptatbash()'
+                )
+            div.row.text-center(style='padding-top: 2%;')
+              h4.col-12#encrypted-atbash
+      div.tab-pane.fade.mx-auto#genmono(role='tabpanel'
+                aria-labelledby="genmonotab")
+        div#genmonobody
+          div#alphabets
+            small Plaintext alphabet
+              h4#plaintext-genmono
+            small Ciphertext alphabet
+              h4#ciphertext-genmono
+        form
+          div.container-fluid
+            div.row.justify-content-center.form-group
+              div.col-12
+                input.form-control#plaintextInput-genmono(
+                  type='plaintext'
+                  placeholder='Text to Encrypt'
+                  )
+            div.row.justify-content-center
+              input.btn.btn-success.col-12.col-md-4(
+                type='button'
+                value='submit'
+                onclick='encryptgenmono()'
+                )
+            div.row.text-center(style='padding-top: 2%;')
+              h4.col-12#encrypted-genmono

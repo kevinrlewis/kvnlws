@@ -1,8 +1,8 @@
-extends layout
+extends header
 
 block content
-  div.container
+  div.container-fluid(style='text-align: center;')
     div.row
-      h1(class='col-xs-1')= error.status
-      h1(class='col-xs-10')= message
-    p=error.stack
+      h1.col-12.mx-auto=error.status + ' Woah now'
+    div.row
+      p=message
