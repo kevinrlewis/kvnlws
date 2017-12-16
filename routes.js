@@ -5,15 +5,16 @@ module.exports = function(app) {
   // INDEX
   app.get('/',
   function(req, res, next) {
-    blogpost.find({}, function(err, allposts) {
-      //console.log(allposts);
-      if(err) {
-        console.log(err);
-        res.render("index.pug", { title: 'Kevin Lewis' });
-      } else {
-        res.render("index.pug", { title: 'Kevin Lewis', blogposts: allposts });
-      }
-    });
+    // blogpost.find({}, function(err, allposts) {
+    //   //console.log(allposts);
+    //   if(err) {
+    //     console.log(err);
+    //     res.render("index.pug", { title: 'Kevin Lewis' });
+    //   } else {
+    //     res.render("index.pug", { title: 'Kevin Lewis', blogposts: allposts });
+    //   }
+    // });
+    res.render("index.pug", { title: 'Kevin Lewis' });
   });
 
   // INDEX POST
