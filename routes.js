@@ -7,12 +7,15 @@ module.exports = function(app) {
   function(req, res, next) {
     blogpost.find({}, function(err, allposts) {
       //console.log(allposts);
-      res.render("index.pug", { title: 'Kevin Lewis', blogposts: allposts });
+      if(err) {
+        console.log(err);
+        res.render("index.pug", { title: 'Kevin Lewis' });
+      } else {
+        res.render("index.pug", { title: 'Kevin Lewis', blogposts: allposts });
+      }
+
+
     });
-    next();
-  },
-  function(req, res) {
-    res.render("index.pug", { title: 'Kevin Lewis', blogposts: allposts });
   });
 
   // INDEX POST
