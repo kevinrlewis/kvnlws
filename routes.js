@@ -3,11 +3,16 @@ var blogpost  = require('./models/blogpost.js')
 
 module.exports = function(app) {
   // INDEX
-  app.get('/', function(req, res){
+  app.get('/',
+  function(req, res, next) {
     blogpost.find({}, function(err, allposts) {
       //console.log(allposts);
       res.render("index.pug", { title: 'Kevin Lewis', blogposts: allposts });
     });
+    next();
+  },
+  function(req, res) {
+    res.render("index.pug", { title: 'Kevin Lewis', blogposts: allposts });
   });
 
   // INDEX POST

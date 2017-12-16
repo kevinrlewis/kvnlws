@@ -1,5 +1,5 @@
-var port          = process.env.PORT || 3000;
 var express       = require('express');
+var port          = process.env.PORT || 3000;
 var path          = require('path');
 var bodyParser    = require('body-parser');
 var helmet        = require('helmet');
@@ -55,7 +55,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error.pug');
+  res.render('error');
 });
 
 // start the server
