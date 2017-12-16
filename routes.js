@@ -13,8 +13,6 @@ module.exports = function(app) {
       } else {
         res.render("index.pug", { title: 'Kevin Lewis', blogposts: allposts });
       }
-
-
     });
   });
 
