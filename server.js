@@ -5,12 +5,28 @@ var bodyParser    = require('body-parser');
 var helmet        = require('helmet');
 var compression   = require('compression');
 var favicon       = require('serve-favicon');
+var flash         = require('connect-flash');
 var mongoose      = require('mongoose');
+var passport      = require('passport');
+var logger        = require('morgan');
 var app           = express();
+var LocalStrategy = require('passport-local').Strategy;
+
+
+app.use(logger('dev'));
 
 // set up body parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(require('express-session')({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash()); // use connect-flash for flash messages stored in session
 
 // set static folder
 app.use(express.static(path.join(__dirname, 'public')));
@@ -28,7 +44,7 @@ app.use(helmet());
 // connect mongodb database
 // TODO: Try to handle
 try {
-  mongoose.connect("mongodb://post:pass4post@ds127439.mlab.com:27439/hash", { useMongoClient: true });
+  mongoose.connect("mongodb://full:full@ds159856.mlab.com:59856/portfolio-dev", { useMongoClient: true });
 } catch (e) {
   console.log("was unable to connect to database");
   console.log(e.message);
@@ -36,7 +52,8 @@ try {
 }
 
 // require the routes file
-require('./routes.js')(app);
+require('./config/passport')(passport); // pass passport for configuration
+require('./routes.js')(app, passport);
 
 // handling
 ////////////////////////////////////////////////////////////////////////////////

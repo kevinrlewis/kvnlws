@@ -10,17 +10,17 @@ function submitPost() {
   // attempt to submit a blog post
   $.ajax({
     type: "POST",
-    url: "/",
+    url: "/post",
     contentType: "application/json",
     data: JSON.stringify(obj),
     success: function(data, status) {
-      //console.log('success data:' + data);
+      console.log('success data: ' + data);
       // display post
       //location.reload();
     },
     error: function(data, status) {
       // hash check failed
-      //console.log(data);
+      console.log(status);
     }
   });
 
