@@ -1,0 +1,27 @@
+extends layout
+
+block content  
+  div.container-fluid(style="padding-bottom: 2%; padding-top: 2%;")
+    form.border.border-danger#loginform(method="POST")
+      div.form-group(style="padding: 2%; margin: 0px;")
+        div.container-fluid
+          if message.length > 0
+              div.row(class='alert alert-danger')=message
+          div.row.justify-content-center
+            input.col-8(type="plaintext"
+                  class="form-control" 
+                  id="usernameInput"
+                  name="username"
+                  placeholder="Enter username")
+          div.row.justify-content-center 
+            input.col-8(type="password"
+                  class="form-control" 
+                  id="passwordInput"
+                  name="password"
+                  placeholder="Enter password"
+                  style="margin-top: 1%;")
+          br
+          div.row.justify-content-center
+            button.col-2.btn.btn-primary(type="submit"
+                  formaction='/login') Sign In
+            a.col-2.btn.btn-primary(href="/") Get Account
