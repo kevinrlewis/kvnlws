@@ -19,38 +19,6 @@ module.exports = function(app, passport) {
     //res.render("index.pug", { title: 'Kevin Lewis' });
   });
 
-  // INDEX POST
-  app.post('/',
-  function(req, res, next) {
-    console.log('attempting to post to blog...');
-    hash.findOne({ 'hash' : req.body.hash }, function (err, hash) {
-      console.log('success');
-      if (err) {
-        console.log(err);
-      }
-
-      var newpost = new blogpost({
-        subject: req.body.subject,
-        content: req.body.content,
-        date: req.body.date
-      });
-      // TODO: finish blog post
-      // add post to db
-      //blogpost.save()
-      newpost.save(function(err) {
-        if (err) {
-          console.log(err);
-          throw err;
-        }
-        console.log('new post saved!');
-      });
-      res.end();
-    });
-
-    // send response that the hash was incorrect
-    res.status(500).send('No match.');
-  });
-
   // EXPERIENCE
   app.get('/experience', function(req, res) {
     res.render("experience.pug", { title: 'Experience' });
